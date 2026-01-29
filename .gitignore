@@ -1,0 +1,17 @@
+# Binaries
+checkandping
+*.exe
+
+# State database
+*.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Test artifacts
+coverage.out

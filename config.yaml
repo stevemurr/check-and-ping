@@ -1,0 +1,36 @@
+claude:
+  # Uses "claude -p" CLI (requires Claude Code / Max subscription)
+  # cli_path: /path/to/claude  # optional, defaults to "claude" in PATH
+  # disabled: false  # set to true to disable Claude (checks requiring it will fail)
+
+notifications:
+  # Uncomment and configure the notification channels you want to use
+
+  # ntfy.sh - free push notifications (install ntfy app on phone)
+  # - type: ntfy
+  #   topic: my-alerts  # change to something unique/private
+  #   server: https://ntfy.sh  # optional, defaults to ntfy.sh
+
+  # Twilio SMS
+  # - type: twilio
+  #   account_sid: ${TWILIO_ACCOUNT_SID}
+  #   auth_token: ${TWILIO_AUTH_TOKEN}
+  #   from: "+1234567890"
+  #   to: "+0987654321"
+
+  # SendGrid email
+  # - type: sendgrid
+  #   api_key: ${SENDGRID_API_KEY}
+  #   from: alerts@example.com
+  #   to: me@example.com
+  #   from_name: Check-and-Ping  # optional
+
+  # Stdout - always useful for debugging/logs
+  - type: stdout
+
+state:
+  # State tracking prevents duplicate alerts for the same condition
+  type: memory  # or "sqlite" for persistence across restarts
+
+  # SQLite configuration (only used if type is "sqlite")
+  # db_path: ./state.db
